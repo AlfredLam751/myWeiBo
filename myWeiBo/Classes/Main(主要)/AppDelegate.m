@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LHTabBarController.h"
 #import "LHNewfeatureController.h"
+#import "LHOauthViewController.h"
 
 
 @interface AppDelegate ()
@@ -31,8 +32,11 @@
     
     //创建导航控制器
     UITabBarController *tabbarVc = [[LHTabBarController alloc] init];
+    
+    LHOauthViewController *oauthVc = [[LHOauthViewController alloc] init];
 
-    self.window.rootViewController = tabbarVc;
+    self.window.rootViewController = oauthVc;
+    
     
     
     //设置跟控制器

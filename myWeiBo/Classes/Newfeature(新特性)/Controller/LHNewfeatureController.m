@@ -7,6 +7,7 @@
 //
 
 #import "LHNewfeatureController.h"
+#import "AFNetworking.h"
 #define NewfeatureCount 4
 
 @interface LHNewfeatureController () <UIScrollViewDelegate>

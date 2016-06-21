@@ -24,9 +24,14 @@
 		3B9CB6401C9AA4B400240AE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B9CB63F1C9AA4B400240AE8 /* Assets.xcassets */; };
 		3BA1EF7E1CB7917A00A7FF79 /* LHNewfeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA1EF7D1CB7917A00A7FF79 /* LHNewfeatureController.m */; };
 		3BB5F88D1D18EBE6007C9221 /* LHOauthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB5F88C1D18EBE6007C9221 /* LHOauthViewController.m */; };
+		3BB5F8951D191526007C9221 /* NSObject+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB5F8941D191526007C9221 /* NSObject+Log.m */; };
+		3BB5F8991D19284E007C9221 /* LHAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB5F8981D19284E007C9221 /* LHAccount.m */; };
+		3BB5F89C1D1947AD007C9221 /* LHAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB5F89B1D1947AD007C9221 /* LHAccountTool.m */; };
+		B3FCB7767A0D91DD495D0890 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 554DB63FC0A439D9C64CD939 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3184B4450D1D70F0E81A5506 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3B046B351C9D3AF30023F0B6 /* LHDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHDiscoverViewController.h; sourceTree = "<group>"; };
 		3B046B361C9D3AF30023F0B6 /* LHDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHDiscoverViewController.m; sourceTree = "<group>"; };
 		3B046B3B1C9D3AF30023F0B6 /* LHHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHHomeViewController.h; sourceTree = "<group>"; };
@@ -51,7 +56,6 @@
 		3B046B5E1C9D3AF30023F0B6 /* LHTestViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHTestViewController2.xib; sourceTree = "<group>"; };
 		3B046B6C1C9D8BE10023F0B6 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		3B046B6D1C9D8BE10023F0B6 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
-		3B46AEDE1C9ABD0A009939FD /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		3B9CB6301C9AA4B400240AE8 /* myWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B9CB6341C9AA4B400240AE8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3B9CB63F1C9AA4B400240AE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,6 +64,15 @@
 		3BA1EF7D1CB7917A00A7FF79 /* LHNewfeatureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHNewfeatureController.m; sourceTree = "<group>"; };
 		3BB5F88B1D18EBE6007C9221 /* LHOauthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHOauthViewController.h; sourceTree = "<group>"; };
 		3BB5F88C1D18EBE6007C9221 /* LHOauthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHOauthViewController.m; sourceTree = "<group>"; };
+		3BB5F8931D191526007C9221 /* NSObject+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+Log.h"; path = "../NSObject+Log.h"; sourceTree = "<group>"; };
+		3BB5F8941D191526007C9221 /* NSObject+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Log.m"; path = "../NSObject+Log.m"; sourceTree = "<group>"; };
+		3BB5F8961D191814007C9221 /* myWeiBo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myWeiBo.pch; sourceTree = "<group>"; };
+		3BB5F8971D19284E007C9221 /* LHAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHAccount.h; sourceTree = "<group>"; };
+		3BB5F8981D19284E007C9221 /* LHAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHAccount.m; sourceTree = "<group>"; };
+		3BB5F89A1D1947AD007C9221 /* LHAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHAccountTool.h; sourceTree = "<group>"; };
+		3BB5F89B1D1947AD007C9221 /* LHAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHAccountTool.m; sourceTree = "<group>"; };
+		554DB63FC0A439D9C64CD939 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4FD00C0C12396DBB5FFCAB2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3FCB7767A0D91DD495D0890 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +96,7 @@
 				3B046B4C1C9D3AF30023F0B6 /* Message(消息) */,
 				3B046B331C9D3AF30023F0B6 /* Discover(发现) */,
 				3B046B521C9D3AF30023F0B6 /* Profile(我) */,
+				3BB5F8901D191504007C9221 /* Common */,
 				3B046B581C9D3AF30023F0B6 /* Temp */,
 				3BB5F8871D18EBC7007C9221 /* Oauth(授权) */,
 			);
@@ -287,6 +302,8 @@
 			children = (
 				3B9CB6321C9AA4B400240AE8 /* myWeiBo */,
 				3B9CB6311C9AA4B400240AE8 /* Products */,
+				87EFB6B43504041BA8488925 /* Pods */,
+				70D79D8DB5D619FE7727EE9A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -313,7 +330,7 @@
 			children = (
 				3B9CB6441C9AA4B400240AE8 /* Info.plist */,
 				3B9CB6341C9AA4B400240AE8 /* main.m */,
-				3B46AEDE1C9ABD0A009939FD /* PrefixHeader.pch */,
+				3BB5F8961D191814007C9221 /* myWeiBo.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -357,6 +374,8 @@
 		3BB5F8891D18EBC7007C9221 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3BB5F8971D19284E007C9221 /* LHAccount.h */,
+				3BB5F8981D19284E007C9221 /* LHAccount.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -368,6 +387,50 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		3BB5F8901D191504007C9221 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3BB5F8911D191504007C9221 /* Category */,
+				3BB5F8921D191504007C9221 /* Tool */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		3BB5F8911D191504007C9221 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				3BB5F8931D191526007C9221 /* NSObject+Log.h */,
+				3BB5F8941D191526007C9221 /* NSObject+Log.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		3BB5F8921D191504007C9221 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				3BB5F89A1D1947AD007C9221 /* LHAccountTool.h */,
+				3BB5F89B1D1947AD007C9221 /* LHAccountTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		70D79D8DB5D619FE7727EE9A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				554DB63FC0A439D9C64CD939 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		87EFB6B43504041BA8488925 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3184B4450D1D70F0E81A5506 /* Pods.debug.xcconfig */,
+				B4FD00C0C12396DBB5FFCAB2 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -375,9 +438,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B9CB6471C9AA4B400240AE8 /* Build configuration list for PBXNativeTarget "myWeiBo" */;
 			buildPhases = (
+				883F26A2A11D93EBB586EAC2 /* Check Pods Manifest.lock */,
 				3B9CB62C1C9AA4B400240AE8 /* Sources */,
 				3B9CB62D1C9AA4B400240AE8 /* Frameworks */,
 				3B9CB62E1C9AA4B400240AE8 /* Resources */,
+				A881AAE9EB43682FA1B0C0BF /* Embed Pods Frameworks */,
+				0200ADD50774EB224DAC67A0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -435,6 +501,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0200ADD50774EB224DAC67A0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		883F26A2A11D93EBB586EAC2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A881AAE9EB43682FA1B0C0BF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3B9CB62C1C9AA4B400240AE8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -442,10 +556,13 @@
 			files = (
 				3B046B6E1C9D8BE10023F0B6 /* UIBarButtonItem+Extension.m in Sources */,
 				3BA1EF7E1CB7917A00A7FF79 /* LHNewfeatureController.m in Sources */,
+				3BB5F8951D191526007C9221 /* NSObject+Log.m in Sources */,
 				3B046B621C9D3AF30023F0B6 /* UIView+LHCategory.m in Sources */,
 				3B046B661C9D3AF30023F0B6 /* LHProfileViewController.m in Sources */,
 				3BB5F88D1D18EBE6007C9221 /* LHOauthViewController.m in Sources */,
 				3B046B631C9D3AF30023F0B6 /* LHNavigationController.m in Sources */,
+				3BB5F8991D19284E007C9221 /* LHAccount.m in Sources */,
+				3BB5F89C1D1947AD007C9221 /* LHAccountTool.m in Sources */,
 				3B046B611C9D3AF30023F0B6 /* AppDelegate.m in Sources */,
 				3B046B671C9D3AF30023F0B6 /* LHTestViewController.m in Sources */,
 				3B9CB6351C9AA4B400240AE8 /* main.m in Sources */,
@@ -542,10 +659,11 @@
 		};
 		3B9CB6481C9AA4B400240AE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3184B4450D1D70F0E81A5506 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				GCC_PREFIX_HEADER = "$(SRCROOT)/myWeiBo/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/myWeiBo/myWeiBo.pch";
 				INFOPLIST_FILE = myWeiBo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.alfred.myWeiBo;
@@ -555,10 +673,11 @@
 		};
 		3B9CB6491C9AA4B400240AE8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4FD00C0C12396DBB5FFCAB2 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				GCC_PREFIX_HEADER = "$(SRCROOT)/myWeiBo/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/myWeiBo/myWeiBo.pch";
 				INFOPLIST_FILE = myWeiBo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.alfred.myWeiBo;
