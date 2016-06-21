@@ -8,11 +8,13 @@
 
 #import "LHNewfeatureController.h"
 #import "AFNetworking.h"
+#import "LHTabBarController.h"
 #define NewfeatureCount 4
 
 @interface LHNewfeatureController () <UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIPageControl *pageControl;
+@property (nonatomic, strong) LHNewfeatureController *featureVc;
 
 @end
 
@@ -76,7 +78,26 @@
 }
 
 -(void)clickBtn{
-    LHLog(@"点击了我");
+    self.featureVc = self;
+    
+    // 切换主界面
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    
+    //这里切换
+    LHTabBarController *tabbar = [[LHTabBarController alloc] init];
+    window.rootViewController =tabbar;
+    
+    [window addSubview:self.view];
+    // 执行动画
+    CGFloat width = self.featureVc.view.frame.size.width;
+    CGFloat height = self.featureVc.view.frame.size.height;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.featureVc.view.frame = CGRectMake(-width, 0, width, height);
+    } completion:^(BOOL finished) {
+        // 清空新特性控制器
+        self.featureVc = nil;
+    }];
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{

@@ -27,6 +27,11 @@
 		3BB5F8951D191526007C9221 /* NSObject+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB5F8941D191526007C9221 /* NSObject+Log.m */; };
 		3BB5F8991D19284E007C9221 /* LHAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB5F8981D19284E007C9221 /* LHAccount.m */; };
 		3BB5F89C1D1947AD007C9221 /* LHAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB5F89B1D1947AD007C9221 /* LHAccountTool.m */; };
+		3BB5F89F1D198324007C9221 /* UIWindow+LHWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB5F89E1D198324007C9221 /* UIWindow+LHWindow.m */; };
+		3BB5F8A51D1989A0007C9221 /* LHSaveDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB5F8A41D1989A0007C9221 /* LHSaveDataTool.m */; };
+		3BB5F8A81D198F8A007C9221 /* LHHomeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB5F8A71D198F8A007C9221 /* LHHomeButton.m */; };
+		3BB5F8AB1D199652007C9221 /* LHUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB5F8AA1D199652007C9221 /* LHUser.m */; };
+		3BB5F8AE1D19980E007C9221 /* LHStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB5F8AD1D19980E007C9221 /* LHStatus.m */; };
 		B3FCB7767A0D91DD495D0890 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 554DB63FC0A439D9C64CD939 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +76,16 @@
 		3BB5F8981D19284E007C9221 /* LHAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHAccount.m; sourceTree = "<group>"; };
 		3BB5F89A1D1947AD007C9221 /* LHAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHAccountTool.h; sourceTree = "<group>"; };
 		3BB5F89B1D1947AD007C9221 /* LHAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHAccountTool.m; sourceTree = "<group>"; };
+		3BB5F89D1D198324007C9221 /* UIWindow+LHWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+LHWindow.h"; sourceTree = "<group>"; };
+		3BB5F89E1D198324007C9221 /* UIWindow+LHWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+LHWindow.m"; sourceTree = "<group>"; };
+		3BB5F8A31D1989A0007C9221 /* LHSaveDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSaveDataTool.h; sourceTree = "<group>"; };
+		3BB5F8A41D1989A0007C9221 /* LHSaveDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHSaveDataTool.m; sourceTree = "<group>"; };
+		3BB5F8A61D198F8A007C9221 /* LHHomeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHHomeButton.h; sourceTree = "<group>"; };
+		3BB5F8A71D198F8A007C9221 /* LHHomeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHHomeButton.m; sourceTree = "<group>"; };
+		3BB5F8A91D199652007C9221 /* LHUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHUser.h; sourceTree = "<group>"; };
+		3BB5F8AA1D199652007C9221 /* LHUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHUser.m; sourceTree = "<group>"; };
+		3BB5F8AC1D19980E007C9221 /* LHStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHStatus.h; sourceTree = "<group>"; };
+		3BB5F8AD1D19980E007C9221 /* LHStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStatus.m; sourceTree = "<group>"; };
 		554DB63FC0A439D9C64CD939 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4FD00C0C12396DBB5FFCAB2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +173,10 @@
 		3B046B3D1C9D3AF30023F0B6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3BB5F8A91D199652007C9221 /* LHUser.h */,
+				3BB5F8AA1D199652007C9221 /* LHUser.m */,
+				3BB5F8AC1D19980E007C9221 /* LHStatus.h */,
+				3BB5F8AD1D19980E007C9221 /* LHStatus.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +184,8 @@
 		3B046B3E1C9D3AF30023F0B6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3BB5F8A61D198F8A007C9221 /* LHHomeButton.h */,
+				3BB5F8A71D198F8A007C9221 /* LHHomeButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,6 +210,8 @@
 				3B046B441C9D3AF30023F0B6 /* UIView+LHCategory.m */,
 				3B046B6C1C9D8BE10023F0B6 /* UIBarButtonItem+Extension.h */,
 				3B046B6D1C9D8BE10023F0B6 /* UIBarButtonItem+Extension.m */,
+				3BB5F89D1D198324007C9221 /* UIWindow+LHWindow.h */,
+				3BB5F89E1D198324007C9221 /* UIWindow+LHWindow.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -408,6 +431,8 @@
 		3BB5F8921D191504007C9221 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				3BB5F8A31D1989A0007C9221 /* LHSaveDataTool.h */,
+				3BB5F8A41D1989A0007C9221 /* LHSaveDataTool.m */,
 				3BB5F89A1D1947AD007C9221 /* LHAccountTool.h */,
 				3BB5F89B1D1947AD007C9221 /* LHAccountTool.m */,
 			);
@@ -560,17 +585,22 @@
 				3B046B621C9D3AF30023F0B6 /* UIView+LHCategory.m in Sources */,
 				3B046B661C9D3AF30023F0B6 /* LHProfileViewController.m in Sources */,
 				3BB5F88D1D18EBE6007C9221 /* LHOauthViewController.m in Sources */,
+				3BB5F8A81D198F8A007C9221 /* LHHomeButton.m in Sources */,
+				3BB5F8AB1D199652007C9221 /* LHUser.m in Sources */,
 				3B046B631C9D3AF30023F0B6 /* LHNavigationController.m in Sources */,
 				3BB5F8991D19284E007C9221 /* LHAccount.m in Sources */,
 				3BB5F89C1D1947AD007C9221 /* LHAccountTool.m in Sources */,
 				3B046B611C9D3AF30023F0B6 /* AppDelegate.m in Sources */,
 				3B046B671C9D3AF30023F0B6 /* LHTestViewController.m in Sources */,
+				3BB5F8A51D1989A0007C9221 /* LHSaveDataTool.m in Sources */,
 				3B9CB6351C9AA4B400240AE8 /* main.m in Sources */,
 				3B046B651C9D3AF30023F0B6 /* LHMessageViewController.m in Sources */,
 				3B046B5F1C9D3AF30023F0B6 /* LHDiscoverViewController.m in Sources */,
 				3B046B601C9D3AF30023F0B6 /* LHHomeViewController.m in Sources */,
 				3B046B641C9D3AF30023F0B6 /* LHTabBarController.m in Sources */,
 				3B046B691C9D3AF30023F0B6 /* LHTestViewController2.m in Sources */,
+				3BB5F89F1D198324007C9221 /* UIWindow+LHWindow.m in Sources */,
+				3BB5F8AE1D19980E007C9221 /* LHStatus.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,11 +693,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/myWeiBo/myWeiBo.pch";
 				INFOPLIST_FILE = myWeiBo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.alfred.myWeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -677,11 +710,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/myWeiBo/myWeiBo.pch";
 				INFOPLIST_FILE = myWeiBo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.alfred.myWeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

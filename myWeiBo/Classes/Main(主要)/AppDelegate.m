@@ -10,6 +10,9 @@
 #import "LHTabBarController.h"
 #import "LHNewfeatureController.h"
 #import "LHOauthViewController.h"
+#import "LHAccountTool.h"
+#import "LHSaveDataTool.h"
+#import "UIWindow+LHWindow.h"
 
 
 @interface AppDelegate ()
@@ -30,21 +33,9 @@
     self.window = [[UIWindow alloc] init];
     self.window.frame = [UIScreen mainScreen].bounds;
     
-    //创建导航控制器
-    UITabBarController *tabbarVc = [[LHTabBarController alloc] init];
-    
-    LHOauthViewController *oauthVc = [[LHOauthViewController alloc] init];
+    //切换跟控制器
+    [self.window switchRootViewController];
 
-    self.window.rootViewController = oauthVc;
-    
-    
-    
-    //设置跟控制器
-//    self.window.rootViewController = [[LHNewfeatureController alloc] init];
-    
-    
-    
-    
     
     [self.window makeKeyAndVisible];
     

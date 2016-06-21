@@ -9,6 +9,7 @@
 #import "LHOauthViewController.h"
 #import "LHAccountTool.h"
 #import "LHTabBarController.h"
+#import "UIWindow+LHWindow.h"
 
 
 @interface LHOauthViewController ()<UIWebViewDelegate>
@@ -44,7 +45,7 @@
     [super didReceiveMemoryWarning];
 }
 
-
+#pragma mark -拦截webview
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     //获取url
     NSString *urlStr =  request.URL.absoluteString;
@@ -65,6 +66,7 @@
     return YES;
 }
 
+//根据codestr获取accesstkoen
 -(void)accessTokenWith:(NSString *)str{
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -81,8 +83,10 @@
         
         LHAccount *account = [LHAccount accountWith:responseObject];
         [LHAccountTool saveAccotunWith:account];
-         UITabBarController *tabbarVc = [[LHTabBarController alloc] init];
-        [UIApplication sharedApplication].keyWindow.rootViewController = tabbarVc;
+        
+        //切换控制器
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        [window switchRootViewController];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         LHLog(@"%@",error);

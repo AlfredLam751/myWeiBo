@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSString *access_token;
 @property (nonatomic, strong) NSString *remind_in;
 @property (nonatomic, strong) NSDate *current_time;
+@property (nonatomic, strong) NSString *name;
 
 +(instancetype)accountWith:(NSDictionary *)dict;
 @end
