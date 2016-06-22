@@ -30,12 +30,83 @@
 
     [self loadStatues];
     
+    //下拉刷新
+    [self refreshDown];
+}
 
+#pragma mark --下拉刷新
+-(void)refreshDown{
+    UIRefreshControl *control = [[UIRefreshControl alloc] init];
     
+    [control addTarget:self action:@selector(refreshWith:) forControlEvents:UIControlEventValueChanged];
+    
+    [self.tableView addSubview:control];
+    [control beginRefreshing];
+    [self refreshWith:control];
+}
+
+-(void)refreshWith:(UIRefreshControl *)control{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    NSString *url = @"https://api.weibo.com/2/statuses/friends_timeline.json";
+
+    LHAccount *account = [LHAccountTool account];
+    LHStatus *status = [self.statues firstObject];
+
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = account.access_token;
+    if (status) {
+        params[@"since_id"] = status.idstr;
+    }
+    
+    [manager GET:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSArray *newStatues = [LHStatus mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        //新插入的数组的长度
+        NSInteger integer = newStatues.count;
+        //插入的范围
+        NSRange rang = NSMakeRange(0, integer);
+        NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:rang];
+        //旧数组实现这方法即可插入
+        [self.statues insertObjects:newStatues atIndexes:set];
+        
+        [control endRefreshing];
+        [self.tableView reloadData];
+        
+        [self setupRefreshLabel:integer];
+        
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        LHLog(@"%@",error);
+    }];
+}
+
+#pragma mark 刷新label
+-(void)setupRefreshLabel:(NSInteger)count{
+    UILabel *label = [[UILabel alloc] init];
+    CGFloat height = 44;
+    label.frame = CGRectMake(0, 64- 44, self.view.width, height);
+    label.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed: @"timeline_new_status_background"]];
+    label.textAlignment = NSTextAlignmentCenter;
+    if (count) {
+        label.text = [NSString stringWithFormat:@"更新了%ld条微博",count];
+    }else{
+        label.text = @"没有微博更新";
+    }
+    
+    [self.navigationController.view insertSubview:label belowSubview:self.navigationController.navigationBar];
+    
+    [UIView animateWithDuration:1 animations:^{
+        label.transform = CGAffineTransformMakeTranslation(0, height);
+        [UIView animateWithDuration:1 delay:2 options:UIViewAnimationOptionCurveLinear animations:^{
+            label.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished) {
+            [label removeFromSuperview];
+        }];
+    }];
 }
 
 #pragma mark 加载微博数据
 -(void)loadStatues{
+    
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     //拼接参数
     NSString *url = @"https://api.weibo.com/2/statuses/friends_timeline.json";
@@ -46,7 +117,6 @@
     
     //发送请求
     [manager GET:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        LHLog(@"%@",responseObject);
         
         NSArray *statuesArr = responseObject[@"statuses"];
         
@@ -140,6 +210,7 @@
     return self.statues.count;
 }
 
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *ID = @"myWeiBo";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
@@ -151,7 +222,7 @@
     LHUser *user = status.user;
     
     cell.detailTextLabel.text = status.text;
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:user.profile_image_url] placeholderImage:nil] ;
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:user.profile_image_url] placeholderImage:[UIImage imageNamed:@"avatar"]] ;
     
     return cell;
 }
