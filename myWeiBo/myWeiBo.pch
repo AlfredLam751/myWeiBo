@@ -24,5 +24,7 @@
 
 #define LHRandomColor [UIColor colorWithRed:((float)arc4random_uniform(256) / 255.0) green:((float)arc4random_uniform(256) / 255.0) blue:((float)arc4random_uniform(256) / 255.0) alpha:1.0]
 
+#define IS_IOS8 ([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0)
+
 
 #endif /* myWeiBo_pch */

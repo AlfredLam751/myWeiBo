@@ -15,4 +15,16 @@
 @property (nonatomic, strong) NSString *idstr;
 /** 用户头像小图*/
 @property (nonatomic, strong) NSString *profile_image_url;
+/**
+ *  会员类型 >2才是会员
+ */
+@property (nonatomic, assign) int mbtype;
+/**
+ *  会员等级
+ */
+@property (nonatomic, assign) int mbrank;
+/**
+ *  是否是Vip
+ */
+@property (nonatomic, assign) BOOL isVip;
 @end

@@ -10,7 +10,10 @@
 
 @implementation LHUser
 
-
+-(void)setMbtype:(int)mbtype{
+    _mbtype = mbtype;
+    self.isVip = mbtype > 2;
+}
 
 
 @end
