@@ -7,7 +7,12 @@
 //
 
 #import "LHStatus.h"
+#import "LHPhotos.h"
 
 @implementation LHStatus
+
++(NSDictionary *)mj_objectClassInArray{
+    return @{@"pic_urls" : [LHPhotos class] };
+}
 
 @end

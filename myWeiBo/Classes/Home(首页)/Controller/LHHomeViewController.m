@@ -182,6 +182,7 @@
     }];
 }
 
+#pragma mark 加载未读微博数
 -(void)loadUnreadCount{
     // 1.请求管理者
     AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];

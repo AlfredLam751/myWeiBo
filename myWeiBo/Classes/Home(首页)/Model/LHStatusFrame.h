@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#define NameLabelFont [UIFont systemFontOfSize:14]
+#define TimeLabelFont [UIFont systemFontOfSize:13]
 @class LHStatus;
 
 @interface LHStatusFrame : NSObject
@@ -28,6 +30,14 @@
 @property (nonatomic, assign) CGRect contentLabelF;
 /** 高度*/
 @property (nonatomic, assign) CGFloat cellHeight;
+
+/** 转发微博整体 */
+@property (nonatomic, assign) CGRect retweetViewF;
+/** 转发昵称+正文 */
+@property (nonatomic, assign) CGRect retweetContentLabelF;
+/** 转发配图 */
+@property (nonatomic, assign) CGRect retweetPhotoViewF;
+
 
 @property (nonatomic, strong) LHStatus *status;
 

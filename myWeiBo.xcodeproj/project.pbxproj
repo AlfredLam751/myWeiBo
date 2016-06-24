@@ -36,6 +36,7 @@
 		3BB5F8AE1D19980E007C9221 /* LHStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB5F8AD1D19980E007C9221 /* LHStatus.m */; };
 		3BBCA4581D1A81300043EE5F /* LHLoadMoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BBCA4571D1A81300043EE5F /* LHLoadMoreView.xib */; };
 		3BBCA45B1D1A81460043EE5F /* LHLoadMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBCA45A1D1A81460043EE5F /* LHLoadMoreView.m */; };
+		3BC93ADF1D1D2454000A86C2 /* LHPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC93ADE1D1D2454000A86C2 /* LHPhotos.m */; };
 		B3FCB7767A0D91DD495D0890 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 554DB63FC0A439D9C64CD939 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +98,8 @@
 		3BBCA4571D1A81300043EE5F /* LHLoadMoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHLoadMoreView.xib; sourceTree = "<group>"; };
 		3BBCA4591D1A81460043EE5F /* LHLoadMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLoadMoreView.h; sourceTree = "<group>"; };
 		3BBCA45A1D1A81460043EE5F /* LHLoadMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLoadMoreView.m; sourceTree = "<group>"; };
+		3BC93ADD1D1D2454000A86C2 /* LHPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHPhotos.h; sourceTree = "<group>"; };
+		3BC93ADE1D1D2454000A86C2 /* LHPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHPhotos.m; sourceTree = "<group>"; };
 		554DB63FC0A439D9C64CD939 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4FD00C0C12396DBB5FFCAB2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -190,6 +193,8 @@
 				3BB5F8AD1D19980E007C9221 /* LHStatus.m */,
 				3BA48AB71D1BC2330099193C /* LHStatusFrame.h */,
 				3BA48AB81D1BC2330099193C /* LHStatusFrame.m */,
+				3BC93ADD1D1D2454000A86C2 /* LHPhotos.h */,
+				3BC93ADE1D1D2454000A86C2 /* LHPhotos.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -618,6 +623,7 @@
 				3B9CB6351C9AA4B400240AE8 /* main.m in Sources */,
 				3B046B651C9D3AF30023F0B6 /* LHMessageViewController.m in Sources */,
 				3B046B5F1C9D3AF30023F0B6 /* LHDiscoverViewController.m in Sources */,
+				3BC93ADF1D1D2454000A86C2 /* LHPhotos.m in Sources */,
 				3B046B601C9D3AF30023F0B6 /* LHHomeViewController.m in Sources */,
 				3B046B641C9D3AF30023F0B6 /* LHTabBarController.m in Sources */,
 				3B046B691C9D3AF30023F0B6 /* LHTestViewController2.m in Sources */,

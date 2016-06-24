@@ -16,6 +16,10 @@
 #import "AFNetworking.h"
 #import "MJExtension.h"
 
+
+#define ScreenHeight [[UIScreen mainScreen] bounds].size.height
+#define ScreenWidth [[UIScreen mainScreen] bounds].size.width
+
 #ifdef DEBUG //处于调试阶段
 #define LHLog(...) NSLog(__VA_ARGS__)
 #else //处于发布阶段
