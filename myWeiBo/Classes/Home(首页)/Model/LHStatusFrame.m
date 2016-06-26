@@ -83,8 +83,49 @@
     CGFloat originalW = ScreenWidth;
     self.originalViewF = CGRectMake(originalX, originalY, originalW, originalH);
     
-    //cell高度
-    self.cellHeight = CGRectGetMaxY(self.originalViewF);
+    //转发微博
+    if (status.retweeted_status) {
+        LHStatus *retweetStatus = status.retweeted_status;
+        LHUser *retweetUser = retweetStatus.user;
+        NSArray *retweetPhotos = retweetStatus.pic_urls;
+        NSString *nameAndContent = [NSString stringWithFormat:@"%@:%@",retweetUser.name,retweetStatus.text];
+        
+        //转发微博昵称和正文
+        CGFloat retweetContentLabelX = iconX;
+        CGFloat retweetContentLabelY = iconY;
+        CGFloat retweetContentLabelW = ScreenWidth - 2 * spacing;
+        CGSize retweetContentLabelSize = [self sizeWithText:nameAndContent font:TimeLabelFont maxW:retweetContentLabelW];
+        self.retweetContentLabelF = (CGRect){{retweetContentLabelX,retweetContentLabelY},retweetContentLabelSize};
+        
+        //转发微博配图
+        CGFloat retweetH = 0;
+        if (retweetPhotos.count) {
+            CGFloat retweetPhotoX = iconX;
+            CGFloat retweetPhotoY = CGRectGetMaxY(self.retweetContentLabelF) +spacing;
+            CGFloat retweetPhotoW = 100;
+            CGFloat retweetPhotoH = 100;
+            self.retweetPhotoViewF = CGRectMake(retweetPhotoX, retweetPhotoY, retweetPhotoW, retweetPhotoH);
+            retweetH = CGRectGetMaxY(self.retweetPhotoViewF) + spacing;
+        }else{
+            retweetH = CGRectGetMaxY(self.retweetContentLabelF) + spacing;
+        }
+        
+        //转发微博整体
+        CGFloat retweetX = 0;
+        CGFloat retweetY = CGRectGetMaxY(self.originalViewF);
+        CGFloat retweetW = ScreenWidth;
+        self.retweetViewF = CGRectMake(retweetX, retweetY, retweetW, retweetH);
+        
+        //cell高度
+        self.cellHeight = CGRectGetMaxY(self.retweetViewF);
+        
+    }else{
+        //cell高度
+        self.cellHeight = CGRectGetMaxY(self.originalViewF);
+    }
+
+    
+
 }
 
 - (CGSize)sizeWithText:(NSString *)text font:(UIFont *)font maxW:(CGFloat)maxW

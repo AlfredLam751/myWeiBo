@@ -161,10 +161,12 @@
     /** 配图 */
     if (photos.count) {
         LHPhotos *photo = photos[0];
+        self.photoView.hidden = NO;
         self.photoView.frame =statusFrame.photoViewF;
         self.photoView.backgroundColor = LHRandomColor;
         [self.photoView sd_setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
     }else{
+        self.photoView.hidden = YES;
         self.photoView.frame = statusFrame.photoViewF;
         self.photoView.image = nil;
     }
@@ -200,20 +202,23 @@
         
         //转发微博整体
         self.retweetView.frame = statusFrame.retweetViewF;
+        self.retweetView.backgroundColor = [UIColor grayColor];
         
         //转发微博昵称+正文
         NSString *nameAndContent = [NSString stringWithFormat:@"%@:%@",retweed_user.name,retweed_status.text];
         self.retweetContentLabel.frame = statusFrame.retweetContentLabelF;
         self.retweetContentLabel.text = nameAndContent;
-        self.retweetContentLabel.font = NameLabelFont;
+        self.retweetContentLabel.font = TimeLabelFont;
         
         //转发微博配图
         if (retweedPhotos.count) {
+            self.retweetPhotoView.hidden = NO;
             LHPhotos *retweedPhoto = retweedPhotos[0];
             self.retweetPhotoView.frame =statusFrame.retweetPhotoViewF;
             [self.retweetPhotoView sd_setImageWithURL:[NSURL URLWithString:retweedPhoto.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
         }else{
             self.retweetPhotoView.frame = statusFrame.retweetPhotoViewF;
+            self.retweetPhotoView.hidden = NO;
             self.retweetPhotoView.image = nil;
         }
         
