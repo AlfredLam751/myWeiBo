@@ -16,11 +16,13 @@
 
 @implementation LHStatusFrame
 
+
 -(void)setStatus:(LHStatus *)status{
     //计算frame
     _status = status;
     LHUser *user = status.user;
     NSArray *photos = status.pic_urls;
+
     
     //头像
     CGFloat iconWH = 50;
@@ -79,9 +81,15 @@
     
     //原创微博view
     CGFloat originalX = 0;
-    CGFloat originalY = 0;
+    CGFloat originalY = 0 + spacing;
     CGFloat originalW = ScreenWidth;
     self.originalViewF = CGRectMake(originalX, originalY, originalW, originalH);
+    
+    //工具条
+    CGFloat toolX = 0;
+    CGFloat toolY = 0;
+    CGFloat toolW = ScreenWidth;
+    CGFloat toolH = 36;
     
     //转发微博
     if (status.retweeted_status) {
@@ -117,14 +125,19 @@
         self.retweetViewF = CGRectMake(retweetX, retweetY, retweetW, retweetH);
         
         //cell高度
-        self.cellHeight = CGRectGetMaxY(self.retweetViewF);
+        toolY = CGRectGetMaxY(self.retweetViewF);
         
     }else{
-        //cell高度
-        self.cellHeight = CGRectGetMaxY(self.originalViewF);
+        
+        toolY = CGRectGetMaxY(self.originalViewF);
+        
     }
-
     
+    //工具条frame
+    self.toolViewF = CGRectMake(toolX, toolY , toolW, toolH);
+
+    //cell高度
+    self.cellHeight = CGRectGetMaxY(self.toolViewF);
 
 }
 

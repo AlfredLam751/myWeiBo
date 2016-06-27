@@ -41,4 +41,11 @@
  */
 @property (nonatomic, strong) LHStatus *retweeted_status;
 
+/**	int	转发数*/
+@property (nonatomic, assign) int reposts_count;
+/**	int	评论数*/
+@property (nonatomic, assign) int comments_count;
+/**	int	表态数*/
+@property (nonatomic, assign) int attitudes_count;
+
 @end

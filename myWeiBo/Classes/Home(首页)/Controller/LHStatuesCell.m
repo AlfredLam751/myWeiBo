@@ -12,6 +12,7 @@
 #import "LHUser.h"
 #import "UIImageView+WebCache.h"
 #import "LHPhotos.h"
+#import "LHStatuesToolBar.h"
 
 @interface LHStatuesCell()
 
@@ -42,6 +43,10 @@
 /** 转发配图 */
 @property (nonatomic, weak) UIImageView *retweetPhotoView;
 
+/**
+ *  工具条
+ */
+@property (nonatomic, weak) LHStatuesToolBar *toolView;
 
 @end
 
@@ -61,10 +66,14 @@
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
 
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.backgroundColor = LHRGBColor(240, 240, 240, 1.0);
     //初始化原创微博
     [self setupOriginalView];
     //初始化转发微博
     [self setupRetweetView];
+    //初始化工具条
+    [self setupToolView];
     
     return self;
 }
@@ -74,6 +83,7 @@
     UIView *originalView = [[UIView alloc] init];
     [self.contentView addSubview:originalView];
     self.originalView = originalView;
+    self.originalView.backgroundColor = [UIColor whiteColor];
     
     /** 头像 */
     UIImageView *iconView = [[UIImageView alloc] init];
@@ -128,6 +138,12 @@
     UIImageView *retweetPhotoView = [[UIImageView alloc] init];
     [retweetView addSubview:retweetPhotoView];
     self.retweetPhotoView = retweetPhotoView;
+}
+
+-(void)setupToolView{
+    LHStatuesToolBar *toolView = [LHStatuesToolBar toolBar];
+    [self.contentView addSubview:toolView];
+    self.toolView = toolView;
 }
 
 -(void)setStatusFrame:(LHStatusFrame *)statusFrame{
@@ -225,7 +241,14 @@
     }else{
         self.retweetView.hidden = YES;
     }
+    
+    //工具条
+    self.toolView.frame = statusFrame.toolViewF;
+    self.toolView.status = status;
+
 
 }
+
+
 
 @end

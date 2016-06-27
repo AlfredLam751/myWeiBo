@@ -38,6 +38,10 @@
 /** 转发配图 */
 @property (nonatomic, assign) CGRect retweetPhotoViewF;
 
+/**
+ *  工具条整体
+ */
+@property (nonatomic, assign) CGRect toolViewF;
 
 @property (nonatomic, strong) LHStatus *status;
 

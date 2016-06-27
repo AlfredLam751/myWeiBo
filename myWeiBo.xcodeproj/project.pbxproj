@@ -20,6 +20,8 @@
 		3B046B691C9D3AF30023F0B6 /* LHTestViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B046B5D1C9D3AF30023F0B6 /* LHTestViewController2.m */; };
 		3B046B6A1C9D3AF30023F0B6 /* LHTestViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B046B5E1C9D3AF30023F0B6 /* LHTestViewController2.xib */; };
 		3B046B6E1C9D8BE10023F0B6 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B046B6D1C9D8BE10023F0B6 /* UIBarButtonItem+Extension.m */; };
+		3B8B4DE51D20CDCE002A0584 /* LHStatuesToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8B4DE41D20CDCE002A0584 /* LHStatuesToolBar.m */; };
+		3B8B4DE81D211CF1002A0584 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8B4DE71D211CF1002A0584 /* NSDate+Extension.m */; };
 		3B9CB6351C9AA4B400240AE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9CB6341C9AA4B400240AE8 /* main.m */; };
 		3B9CB6401C9AA4B400240AE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B9CB63F1C9AA4B400240AE8 /* Assets.xcassets */; };
 		3BA1EF7E1CB7917A00A7FF79 /* LHNewfeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA1EF7D1CB7917A00A7FF79 /* LHNewfeatureController.m */; };
@@ -66,6 +68,10 @@
 		3B046B5E1C9D3AF30023F0B6 /* LHTestViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHTestViewController2.xib; sourceTree = "<group>"; };
 		3B046B6C1C9D8BE10023F0B6 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		3B046B6D1C9D8BE10023F0B6 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		3B8B4DE31D20CDCE002A0584 /* LHStatuesToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHStatuesToolBar.h; sourceTree = "<group>"; };
+		3B8B4DE41D20CDCE002A0584 /* LHStatuesToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHStatuesToolBar.m; sourceTree = "<group>"; };
+		3B8B4DE61D211CF1002A0584 /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		3B8B4DE71D211CF1002A0584 /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
 		3B9CB6301C9AA4B400240AE8 /* myWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B9CB6341C9AA4B400240AE8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3B9CB63F1C9AA4B400240AE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -209,6 +215,8 @@
 				3BBCA4571D1A81300043EE5F /* LHLoadMoreView.xib */,
 				3BBCA4591D1A81460043EE5F /* LHLoadMoreView.h */,
 				3BBCA45A1D1A81460043EE5F /* LHLoadMoreView.m */,
+				3B8B4DE31D20CDCE002A0584 /* LHStatuesToolBar.h */,
+				3B8B4DE41D20CDCE002A0584 /* LHStatuesToolBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -445,6 +453,8 @@
 		3BB5F8911D191504007C9221 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				3B8B4DE61D211CF1002A0584 /* NSDate+Extension.h */,
+				3B8B4DE71D211CF1002A0584 /* NSDate+Extension.m */,
 				3BB5F8931D191526007C9221 /* NSObject+Log.h */,
 				3BB5F8941D191526007C9221 /* NSObject+Log.m */,
 			);
@@ -603,12 +613,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B8B4DE81D211CF1002A0584 /* NSDate+Extension.m in Sources */,
 				3B046B6E1C9D8BE10023F0B6 /* UIBarButtonItem+Extension.m in Sources */,
 				3BA1EF7E1CB7917A00A7FF79 /* LHNewfeatureController.m in Sources */,
 				3BA48AB91D1BC2330099193C /* LHStatusFrame.m in Sources */,
 				3BB5F8951D191526007C9221 /* NSObject+Log.m in Sources */,
 				3BBCA45B1D1A81460043EE5F /* LHLoadMoreView.m in Sources */,
 				3B046B621C9D3AF30023F0B6 /* UIView+LHCategory.m in Sources */,
+				3B8B4DE51D20CDCE002A0584 /* LHStatuesToolBar.m in Sources */,
 				3B046B661C9D3AF30023F0B6 /* LHProfileViewController.m in Sources */,
 				3BB5F88D1D18EBE6007C9221 /* LHOauthViewController.m in Sources */,
 				3BA48AB61D1B978A0099193C /* LHStatuesCell.m in Sources */,
