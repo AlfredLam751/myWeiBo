@@ -16,6 +16,9 @@
 #import "AFNetworking.h"
 #import "MJExtension.h"
 #import "NSDate+Extension.h"
+#import "PYPhotosView.h"
+#import "UIImageView+WebCache.h"
+
 
 
 #define ScreenHeight [[UIScreen mainScreen] bounds].size.height

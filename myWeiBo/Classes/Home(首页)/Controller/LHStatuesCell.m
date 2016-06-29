@@ -10,9 +10,9 @@
 #import "LHStatusFrame.h"
 #import "LHStatus.h"
 #import "LHUser.h"
-#import "UIImageView+WebCache.h"
 #import "LHPhotos.h"
 #import "LHStatuesToolBar.h"
+#import "LHIconView.h"
 
 @interface LHStatuesCell()
 
@@ -20,11 +20,11 @@
 /** 原创微博整体 */
 @property (nonatomic, weak) UIView *originalView;
 /** 头像 */
-@property (nonatomic, weak) UIImageView *iconView;
+@property (nonatomic, weak) LHIconView *iconView;
 /** 会员图标 */
 @property (nonatomic, weak) UIImageView *vipView;
 /** 配图 */
-@property (nonatomic, weak) UIImageView *photoView;
+@property (nonatomic, weak) PYPhotosView *photoView;
 /** 昵称 */
 @property (nonatomic, weak) UILabel *nameLabel;
 /** 时间 */
@@ -41,7 +41,7 @@
 /** 转发昵称+正文 */
 @property (nonatomic, weak) UILabel *retweetContentLabel;
 /** 转发配图 */
-@property (nonatomic, weak) UIImageView *retweetPhotoView;
+@property (nonatomic, weak) PYPhotosView *retweetPhotoView;
 
 /**
  *  工具条
@@ -86,7 +86,7 @@
     self.originalView.backgroundColor = [UIColor whiteColor];
     
     /** 头像 */
-    UIImageView *iconView = [[UIImageView alloc] init];
+    LHIconView *iconView = [[LHIconView alloc] init];
     [originalView addSubview:iconView];
     self.iconView = iconView;
     
@@ -96,7 +96,7 @@
     self.vipView = vipView;
     
     /** 配图 */
-    UIImageView *photoView = [[UIImageView alloc] init];
+    PYPhotosView *photoView = [PYPhotosView photosView];
     [originalView addSubview:photoView];
     self.photoView = photoView;
     
@@ -135,7 +135,7 @@
     self.retweetContentLabel.numberOfLines = 0;
     
     /** 转发配图 */
-    UIImageView *retweetPhotoView = [[UIImageView alloc] init];
+    PYPhotosView *retweetPhotoView = [PYPhotosView photosView];
     [retweetView addSubview:retweetPhotoView];
     self.retweetPhotoView = retweetPhotoView;
 }
@@ -159,7 +159,7 @@
     
     /** 头像 */
     self.iconView.frame = statusFrame.iconViewF;
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:user.profile_image_url] placeholderImage: [UIImage imageNamed:@"avatar"]];
+    self.iconView.user = user;
     
     /** 会员图标 */
     if (user.isVip) {
@@ -176,15 +176,19 @@
     
     /** 配图 */
     if (photos.count) {
-        LHPhotos *photo = photos[0];
+        NSMutableArray *newPhoto = [NSMutableArray array];
+        for (int i = 0; i < photos.count; ++i) {
+            LHPhotos *photo = photos[i];
+            [newPhoto addObject:photo.thumbnail_pic];
+        }
         self.photoView.hidden = NO;
         self.photoView.frame =statusFrame.photoViewF;
-        self.photoView.backgroundColor = LHRandomColor;
-        [self.photoView sd_setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
+        self.photoView.photos = newPhoto;
+        self.photoView.pageType = PYPhotosViewPageTypeLabel;
+//        self.photoView.py_y = 20 + 64;
     }else{
         self.photoView.hidden = YES;
         self.photoView.frame = statusFrame.photoViewF;
-        self.photoView.image = nil;
     }
 
     
@@ -229,13 +233,19 @@
         //转发微博配图
         if (retweedPhotos.count) {
             self.retweetPhotoView.hidden = NO;
-            LHPhotos *retweedPhoto = retweedPhotos[0];
+            NSMutableArray *retweetNewPhoto = [NSMutableArray array];
+            for (int i = 0; i < retweedPhotos.count; ++i) {
+                LHPhotos *retweetPhoto = retweedPhotos[i];
+                [retweetNewPhoto addObject:retweetPhoto.thumbnail_pic];
+            }
             self.retweetPhotoView.frame =statusFrame.retweetPhotoViewF;
-            [self.retweetPhotoView sd_setImageWithURL:[NSURL URLWithString:retweedPhoto.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
+            self.retweetPhotoView.photos = retweetNewPhoto;
+            self.retweetPhotoView.pageType = PYPhotosViewPageTypeLabel;
+            
         }else{
             self.retweetPhotoView.frame = statusFrame.retweetPhotoViewF;
             self.retweetPhotoView.hidden = NO;
-            self.retweetPhotoView.image = nil;
+
         }
         
     }else{

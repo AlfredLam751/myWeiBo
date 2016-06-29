@@ -16,6 +16,20 @@
 
 @implementation LHStatusFrame
 
+- (CGSize)sizeWithCount:(int)count
+{
+
+    ///Users/apple/Desktop/课堂共享/05-iPhone项目/1018/代码/黑马微博2期35-相册/黑马微博2期/Classes/Home(首页)/View/HWStatusPhotosView.m 列数
+    int cols = (count >= 3)? 3 : count;
+    CGFloat photosW = cols * 70 + (cols - 1) * 5;
+    
+    // 行数
+    int rows = (count + 3 - 1) / 3;
+    CGFloat photosH = rows * 70 + (rows - 1) * 5;
+    
+    return CGSizeMake(photosW, photosH);
+}
+
 
 -(void)setStatus:(LHStatus *)status{
     //计算frame
@@ -70,9 +84,7 @@
     if (photos.count) {
         CGFloat photoX = iconX;
         CGFloat photoY = CGRectGetMaxY(self.contentLabelF) +spacing;
-        CGFloat photoW = 100 ;
-        CGFloat photoH = 100;
-        self.photoViewF = CGRectMake(photoX, photoY, photoW, photoH);
+        self.photoViewF = (CGRect){{photoX, photoY}, [self sizeWithCount:(int)photos.count]};
         originalH = CGRectGetMaxY(self.photoViewF) + spacing;
     }else{
         originalH = CGRectGetMaxY(self.contentLabelF) + spacing;
@@ -110,9 +122,7 @@
         if (retweetPhotos.count) {
             CGFloat retweetPhotoX = iconX;
             CGFloat retweetPhotoY = CGRectGetMaxY(self.retweetContentLabelF) +spacing;
-            CGFloat retweetPhotoW = 100;
-            CGFloat retweetPhotoH = 100;
-            self.retweetPhotoViewF = CGRectMake(retweetPhotoX, retweetPhotoY, retweetPhotoW, retweetPhotoH);
+            self.retweetPhotoViewF = (CGRect){{retweetPhotoX, retweetPhotoY},[self sizeWithCount:(int)retweetPhotos.count] };
             retweetH = CGRectGetMaxY(self.retweetPhotoViewF) + spacing;
         }else{
             retweetH = CGRectGetMaxY(self.retweetContentLabelF) + spacing;
